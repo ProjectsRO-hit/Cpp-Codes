@@ -8,7 +8,7 @@ int main()
 
     if (savings > 5000)
     {
-        if (savings > 10000)                     // nested loops
+        if (savings > 10000) // nested loops
         {
             cout << "Roadtrip with Neha\n";
         }
@@ -26,5 +26,4 @@ int main()
         cout << "Friends\n";
     }
     return 0;
-}
 }
