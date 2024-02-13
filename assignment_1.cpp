@@ -22,6 +22,7 @@ int main()
     string input;
     cout << "Hey there! Where do you live?" << endl;
     getline(cin, input); // fixing space issues for places/counties/continents which have more than 1 name! i.e. North America
+    // cin >> input;
 
     cout << "Wow " << input << "! That's a really good place to live in, I would love to visit there!!" << endl;
 
