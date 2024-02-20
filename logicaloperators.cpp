@@ -76,4 +76,3 @@ int main(){
 	std::cout << "(! a) && (d == e) : " << ((! a) && (d == e)) << std::endl;
    
     return 0;
-}
