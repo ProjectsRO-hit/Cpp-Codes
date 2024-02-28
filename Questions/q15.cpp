@@ -1,15 +1,13 @@
-// Write a program that involves operations between int and double variables.
-//  Ensure that the final result is of the double type. Print both the intermediate and final results.
+// 4.Develop a program where you perform a division operation with two int values, causing an underflow condition.
+//  Check for underflow and print a message if it occurs.
 
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 int main()
 {
-    double a{54.6743};
-    int x = 373;
+    unsigned short int f1 {561}; unsigned short int f2 {900};
+    unsigned short sum = f1 - f2;
 
-    auto l = x * a;
-    cout << l << endl;
+    cout << sum << endl;
     return 0;
 }
