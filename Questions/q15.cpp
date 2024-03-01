@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     unsigned short int f1 {561}; unsigned short int f2 {900};
-    unsigned short sum = f1 - f2;
+    unsigned short sum = f1 - f2; //underflow
 
     cout << sum << endl;
     return 0;
