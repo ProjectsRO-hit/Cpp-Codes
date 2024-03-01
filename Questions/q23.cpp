@@ -1,5 +1,5 @@
 // - Implement a C++ function to calculate the power of a number (x^n) without using the `pow` function.
-//    - Create a function that calculates the greatest common divisor (GCD) of two numbers using Euclid's algorithm.
+
 
 #include <iostream>
 
