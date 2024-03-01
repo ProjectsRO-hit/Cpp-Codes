@@ -1,0 +1,10 @@
+// git token 
+ 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
+ 
+
+    Run git config --global credential.helper wincred
+    Go to: CONTROL PANEL\CREDENTIAL MANAGER\WINDOWS CREDENTIAL\GENERIC CREDENTIAL
+    Click in add a credential in Internet or network address: add git:https://{username}.github.com
+    User: {name}
+    Password: {Password}
+
