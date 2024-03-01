@@ -11,5 +11,6 @@ int main()
 
     unsigned char c = {'s'};
     std::cout << "Binary Conversion of Character " << c << " is: " << std::bitset<16>(static_cast<int>(c)) << std::endl;
+    return 0;
 }
 
