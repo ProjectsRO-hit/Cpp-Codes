@@ -14,7 +14,7 @@ int main()
 {
     for (unsigned char i{0}; i < 255; ++i)
     {
-        if (i > 64 && i < 0X5B)
+        if (i > 64 && i < 91)
         {
             cout << static_cast<unsigned char>(i);
             if (i != 'Z')
