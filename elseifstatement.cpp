@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-const int marker{10};
+const int marker{10};   
 const int pen{20};
 const int eraser{30};
 const int paintbrush{40};
