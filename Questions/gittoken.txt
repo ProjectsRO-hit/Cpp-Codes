@@ -11,3 +11,10 @@
 git config --global credential.helper store
 run git push/pull to store
 git config credential.helper 'cache --timeout=<38,730>'
+
+
+
+git config --global credential.helper 'cache --timeout=108000'
+ git config --global credential.helper store
+ vim .gitconfig
+ ls .ssh

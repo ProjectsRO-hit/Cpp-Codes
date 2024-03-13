@@ -4,7 +4,7 @@
 int main()
 {
     unsigned int year;
-    std::cout << "-------Welcome to Terminal Calender--------" << std::endl;
+    std::cout << "-------Welcome to Terminal Calendar--------" << std::endl;
     std::cout << "Input the year of the required calender: ";
     std::cin >> year;
 
@@ -127,6 +127,3 @@ int main()
         std::cout << "\n\n";
     }
 }
-
-// tell the year?
-//check 
