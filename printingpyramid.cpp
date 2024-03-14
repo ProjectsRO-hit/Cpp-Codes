@@ -42,7 +42,8 @@ int main()
         }
         for (int power = 0; power <= row; power++)
         {
-            std::cout << std::setw(width) << std::pow(2, power);
+            // std::cout << std::setw(width) << std::pow(2, power);
+            std::cout << std::setw(width) << (power << 2);
         }
         for (int power = row - 1; power >= 0; power--)
         {
