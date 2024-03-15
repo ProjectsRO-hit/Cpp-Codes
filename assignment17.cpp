@@ -15,40 +15,90 @@
 
 // for an input of int data[] {7,5,7,2,4,1,7,4,2} your code should print The collection contains 5 unique numbers, they are : 7 5 2 4 1 .
 
+// #include <iostream>
+// #include <algorithm>
+
+// using namespace std;
+
+// int main()
+// {
+//     int arr[]{1, 2, 5, 3, 1, 6, 4, 7, 3, 5, 7, 2, 3, 53, 24, 23, 52, 53};
+//     int arr2[100]{}; // Assuming maximum possible unique elements as 100
+//     int count = 0;
+    
+//     for (int x : arr)
+//     {
+//         bool found = false;
+//         for (int y : arr2)
+//         {
+//             if (x == y)
+//             {
+//                 found = true;
+//                 break;
+//             }
+//         }
+//         if (!found)
+//         {
+//             arr2[count++] = x;
+//         }
+//     }
+
+//     cout << "The collection contains " << count << " unique numbers, they are : ";
+//     for (int i = 0; i < count; ++i)
+//     {
+//         cout << arr2[i] << " ";
+//     }
+//     cout << endl;
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <set>
+
+// int main() {
+//     int arr[]{1, 2, 5, 3, 1, 6, 4, 7, 3, 5, 7, 2, 3, 53, 24, 23, 52, 53};
+    
+//     std::set<int> uniqueNumbers(arr, arr + sizeof(arr) / sizeof(arr[0]));
+
+//     std::cout << "The collection contains " << uniqueNumbers.size() << " unique numbers, they are: ";
+//     for (int num : uniqueNumbers) {
+//         std::cout << num << " ";
+//     }
+//     std::cout << std::endl;
+
+//     return 0;
+// }
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int arr[]{1, 2, 5, 3, 1, 6, 4, 7, 3, 5, 7, 2, 3, 53, 24, 23, 52, 53};
-    int arr2[100]{}; // Assuming maximum possible unique elements as 100
+    int arr2[100];
+    fill_n(arr2, 100, -1); // Initialize arr2 with a value not in the original array
     int count = 0;
     
-    for (int x : arr)
-    {
+    for (int x : arr) {
         bool found = false;
-        for (int y : arr2)
-        {
-            if (x == y)
-            {
+        for (int y : arr2) {
+            if (x == y && x != -1) { // Exclude the initialization value
                 found = true;
                 break;
             }
         }
-        if (!found)
-        {
+        if (!found) {
             arr2[count++] = x;
         }
     }
 
     cout << "The collection contains " << count << " unique numbers, they are : ";
-    for (int i = 0; i < count; ++i)
-    {
+    for (int i = 0; i < count; ++i) {
         cout << arr2[i] << " ";
     }
     cout << endl;
 
     return 0;
 }
+
