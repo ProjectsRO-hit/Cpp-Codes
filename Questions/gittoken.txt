@@ -1,6 +1,4 @@
-// git token 
- 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
- 
+
 
     Run git config --global credential.helper wincred
     Go to: CONTROL PANEL\CREDENTIAL MANAGER\WINDOWS CREDENTIAL\GENERIC CREDENTIAL
