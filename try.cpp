@@ -36,5 +36,8 @@ int main()
 	std::cout << "Bit 3 is: " << ((c1 & bit3) >> 3) << std::endl;
 	std::cout << "Bit 3 is: " << static_cast<bool>(c1 & bit3)<< std::endl;
 
+	//toggling bit position 3
+	std::cout << "Toggling bit 3:" << std::setw(Col_width) << std::bitset<8>(c1 ^= bit3) << std::endl;
+
 	return 0;
 }
