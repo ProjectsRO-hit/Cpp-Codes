@@ -1,24 +1,18 @@
 #include <iostream>
 #include <bitset>
+#include <iomanip>
 
+const int Col_width{20};
 
-int main(){
+int main()
+{
 
-	unsigned int value {0xCC01u};
-
-	std::cout << "Size of short int " << sizeof(short int) <<  std::endl;//  16 bits
-	
-    std::cout << "value : " << std::bitset<20>(value) 
-    << ", dec : " << value << std::endl;
-
-    for (int i = 0; i<5; i++)
-    {
-
-    //Shift left by one bit
-    value = static_cast<unsigned int>(value << 1);
-    std::cout << "value : " << std::bitset<20>(value) 
-    << ", dec : " << value << std::endl;
-    }
-
+    unsigned int value{0xCC01u};
+    std::cout << std::setw(Col_width) << "Value = " << std::bitset<10>(value) << std::endl;
+    std::cout << std::setw(Col_width) << "Value = " << std::dec << value << std::endl;
+    // value <<= 2;
+    value = (value << 2);
+    std::cout << std::setw(Col_width) << "Value = " << std::bitset<10>(value) << std::endl;
+    std::cout << std::setw(Col_width) << "Value = " << std::dec << value << std::endl;
     return 0;
 }
