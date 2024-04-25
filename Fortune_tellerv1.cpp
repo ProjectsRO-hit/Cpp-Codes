@@ -16,7 +16,7 @@ void predict_fortune(int x, const char *name) {
         "In the grand game of life, you're about to draw the 'Chance' card that reads: 'Go directly to chaos, do not pass Go, do not collect $200.' Buckle up, it's gonna be a bumpy ride!"
     };
 
-    std::cout << "Hello Mr. " << name << ", here is your prediction: " << std::endl;
+    std::cout << "Hello " << name << ", here is your prediction: " << std::endl;
     std::cout << predictions[x - 1] << std::endl;
 }
 
