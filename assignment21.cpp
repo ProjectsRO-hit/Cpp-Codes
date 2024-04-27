@@ -12,15 +12,16 @@ until the user decides for the program to end. Below is a sample run of the prog
 #include <iomanip>
 #include <ctime>
 #include <cstdlib>
+#include <cmath>
 
-void random_question(size_t r1, size_t r2)
+void random_question(unsigned int r1, unsigned int r2)
 {
-    int user_answer;
+    double user_answer;
     char operation_gen;
     char operations[]{'+', '-', '*', '/'};
     operation_gen = operations[std::rand() % 4];
 
-    int result;
+    double result;
     switch (operation_gen)
     {
     case '+':
@@ -35,7 +36,7 @@ void random_question(size_t r1, size_t r2)
     case '/':
         // Avoid division by zero
         if (r2 != 0)
-            result = r1 / r2;
+            result = static_cast<double>(r1) / r2; // Perform floating-point division
         else
         {
             // If division by zero occurs, re-generate random numbers and operation
@@ -51,25 +52,36 @@ void random_question(size_t r1, size_t r2)
 
     // Prompting user for answer
     std::cout << "What will be the answer of this operation: " << r1 << operation_gen << r2 << std::endl;
+    std::cout << std::fixed << std::setprecision(3); // Set precision to 3 decimal places
     std::cin >> user_answer;
 
     // Checking user's answer
-    if (user_answer == result)
-        std::cout << "Correct! Good job!" << std::endl;
+    if (std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore();
+        std::cout << "Invalid input" << std::endl;
+    }
     else
-        std::cout << "Incorrect. The correct answer is: " << result << std::endl;
+    {
+        // Checking user's answer
+        if (std::abs(user_answer - result) < 0.01) // Compare with a tolerance of 0.001
+            std::cout << "Correct! Good job!" << std::endl;
+        else
+            std::cout << "Incorrect. The correct answer is: " << result << std::endl;
+    }
 }
 
 int main()
 {
     bool end{false};
     std::srand(std::time(0));
-    std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask question not you mf!" << std::endl;
+    std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask questions, not you, mf!" << std::endl;
 
     while (!end)
     {
-        size_t randomnum1 = std::rand() % 200;
-        size_t randomnum2 = std::rand() % 200;
+        unsigned int randomnum1 = std::rand() % 200;
+        unsigned int randomnum2 = std::rand() % 200;
         random_question(randomnum1, randomnum2);
         
         char user_end;
