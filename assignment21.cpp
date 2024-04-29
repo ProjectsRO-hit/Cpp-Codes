@@ -54,44 +54,42 @@ void random_question(unsigned int r1, unsigned int r2)
     std::cout << "What will be the answer of this operation: " << r1 << operation_gen << r2 << std::endl;
     std::cout << std::fixed << std::setprecision(3); // Set precision to 3 decimal places
     std::cin >> user_answer;
-
-    // Checking user's answer
     if (std::cin.fail())
     {
         std::cin.clear();
         std::cin.ignore();
-        std::cout << "Invalid input" << std::endl;
+        std::cout << "Invalid" << std::endl;
     }
     else
     {
         // Checking user's answer
-        if (std::abs(user_answer - result) < 0.01) // Compare with a tolerance of 0.001
+        if (user_answer == result)
             std::cout << "Correct! Good job!" << std::endl;
         else
             std::cout << "Incorrect. The correct answer is: " << result << std::endl;
     }
 }
 
-int main()
-{
-    bool end{false};
-    std::srand(std::time(0));
-    std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask questions, not you, mf!" << std::endl;
-
-    while (!end)
+    int main()
     {
-        unsigned int randomnum1 = std::rand() % 200;
-        unsigned int randomnum2 = std::rand() % 200;
-        random_question(randomnum1, randomnum2);
-        
-        char user_end;
-        std::cout << " Do you want to continue? Press 'Y' to continue or 'N' to exit!" << std::endl;
-        std::cin >> user_end;
-        if (user_end == 'N' || user_end == 'n')
-        {
-            end = true;
-        }
-    }
+        bool end{false};
+        std::srand(std::time(0));
+        std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask question not you mf!" << std::endl;
 
-    return 0;
-}
+        while (!end)
+        {
+            size_t randomnum1 = std::rand() % 200;
+            size_t randomnum2 = std::rand() % 200;
+            random_question(randomnum1, randomnum2);
+
+            char user_end;
+            std::cout << " Do you want to continue? Press 'Y' to continue or 'N' to exit!" << std::endl;
+            std::cin >> user_end;
+            if (user_end == 'N' || user_end == 'n')
+            {
+                end = true;
+            }
+        }
+
+        return 0;
+    }
