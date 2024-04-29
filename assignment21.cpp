@@ -52,34 +52,42 @@ void random_question(size_t r1, size_t r2)
     // Prompting user for answer
     std::cout << "What will be the answer of this operation: " << r1 << operation_gen << r2 << std::endl;
     std::cin >> user_answer;
-
-    // Checking user's answer
-    if (user_answer == result)
-        std::cout << "Correct! Good job!" << std::endl;
-    else
-        std::cout << "Incorrect. The correct answer is: " << result << std::endl;
-}
-
-int main()
-{
-    bool end{false};
-    std::srand(std::time(0));
-    std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask question not you mf!" << std::endl;
-
-    while (!end)
+    if (std::cin.fail())
     {
-        size_t randomnum1 = std::rand() % 200;
-        size_t randomnum2 = std::rand() % 200;
-        random_question(randomnum1, randomnum2);
-        
-        char user_end;
-        std::cout << " Do you want to continue? Press 'Y' to continue or 'N' to exit!" << std::endl;
-        std::cin >> user_end;
-        if (user_end == 'N' || user_end == 'n')
-        {
-            end = true;
-        }
+        std::cin.clear();
+        std::cin.ignore();
+        std::cout << "Invalid" << std::endl;
     }
-
-    return 0;
+    else
+    {
+        // Checking user's answer
+        if (user_answer == result)
+            std::cout << "Correct! Good job!" << std::endl;
+        else
+            std::cout << "Incorrect. The correct answer is: " << result << std::endl;
+    }
 }
+
+    int main()
+    {
+        bool end{false};
+        std::srand(std::time(0));
+        std::cout << "Welcome to the Greatest Calculator on Earth! Here I ask question not you mf!" << std::endl;
+
+        while (!end)
+        {
+            size_t randomnum1 = std::rand() % 200;
+            size_t randomnum2 = std::rand() % 200;
+            random_question(randomnum1, randomnum2);
+
+            char user_end;
+            std::cout << " Do you want to continue? Press 'Y' to continue or 'N' to exit!" << std::endl;
+            std::cin >> user_end;
+            if (user_end == 'N' || user_end == 'n')
+            {
+                end = true;
+            }
+        }
+
+        return 0;
+    }
