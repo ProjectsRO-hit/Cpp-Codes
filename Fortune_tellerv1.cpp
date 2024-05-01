@@ -3,7 +3,7 @@
 #include <cstdlib>
 
 void predict_fortune(int x, const char *name) {
-    const char *predictions[] = {
+     const char *predictions[] = {
         "Congratulations! Your future holds endless queues at the DMV and never-ending elevator music. Enjoy the ride!",
         "Prepare for a series of unfortunate events that will make Lemony Snicket's stories look like fairy tales. Pack extra snacks.",
         "In your near future, you will discover the true meaning of 'Murphy's Law' as it follows you like a persistent shadow. Embrace the chaos!",
@@ -15,6 +15,7 @@ void predict_fortune(int x, const char *name) {
         "Prepare for a series of unfortunate wardrobe malfunctions, including but not limited to: spinach in your teeth, mismatched socks, and a surprise encounter with your ex when you least expect it.",
         "In the grand game of life, you're about to draw the 'Chance' card that reads: 'Go directly to chaos, do not pass Go, do not collect $200.' Buckle up, it's gonna be a bumpy ride!"
     };
+
 
     std::cout << "Hello " << name << ", here is your prediction: " << std::endl;
     std::cout << predictions[x - 1] << std::endl;
