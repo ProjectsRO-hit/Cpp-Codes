@@ -29,21 +29,22 @@ void merge_arrays(int data1[], int data2[], unsigned int size1, unsigned int siz
     unsigned int i = 0, j = 0, k = 0; // Counters for iterating through arrays
 
     // Merge arrays while there are elements left in both arrays
-    while (i < size1 && j < size2)
+    while (i < size1)
     {
-        if (data1[i] < data2[j])
-            merge_data[k++] = data1[i++];
-        else
-            merge_data[k++] = data2[j++];
+        merge_data[k++] = data1[i++];
+    }
+    while (j < size2)
+    {
+        merge_data[k++] = data2[j++];
     }
 
-    // Copy remaining elements of the first array, if any
-    while (i < size1)
-        merge_data[k++] = data1[i++];
+    // // Copy remaining elements of the first array, if any
+    // while (i < size1)
+    //     merge_data[k++] = data1[i++];
 
-    // Copy remaining elements of the second array, if any
-    while (j < size2)
-        merge_data[k++] = data2[j++];
+    // // Copy remaining elements of the second array, if any
+    // while (j < size2)
+    //     merge_data[k++] = data2[j++];
 
     for (int i{0}; i < size_combine; ++i)
     {
