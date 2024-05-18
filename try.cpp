@@ -1,9 +1,22 @@
-#include<iostream>
-
-using namespace std;
+#include <iostream>
+ 
 int main(){
-    char name1 [] {"Rohit"};
-    char name2 [] {'R', 'o', 'h', 'i', 't', '\0'};
-    std::cout << name1 << std::endl;
+    
+    const int age{33};
+ 
+    const int& age_ref{age};
+ 
+    std::cout << "--Before--" << std::endl;
+    std::cout << "age_ref: " << age_ref << std::endl;
+    std::cout << "&age_ref : " << &age_ref << std::endl;
+ 
+    int age1 {44};
+    age_ref = age1;
+ 
+    std::cout << "--After--" << std::endl;
+    std::cout << "age_ref: " << age_ref << std::endl;
+
+    std::cout << "&age_ref : " << &age_ref << std::endl;
+ 
     return 0;
 }
